@@ -5,4 +5,5 @@ JOIN customers ON employees.EmployeeId = customers.SupportRepId
 JOIN invoices on customers.CustomerId = invoices.CustomerId
 WHERE invoices.InvoiceDate BETWEEN '2010-01-01' AND '2010-12-31'
 GROUP BY employees.EmployeeId
-ORDER BY SUM(invoices.Total);
+ORDER BY SUM(invoices.Total) DESC
+LIMIT 1;
